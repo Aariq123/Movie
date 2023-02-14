@@ -10,14 +10,16 @@ const Movie = () => {
   const [details, setDetails] = useState('')
   const [similar, setSimilar] = useState([])
   const [credits, setCredits] = useState([])
+  const [loading, setLoading] = useState(true)
   const location = useLocation()
   const { movieId } = location.state
+
 
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${id}&language=en-US`)
       .then(res => {
         setDetails(res.data)
-        console.log(details)
+        
       })
 
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${id}&language=en-US`)
@@ -28,12 +30,14 @@ const Movie = () => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${id}&language=en-US`)
       .then(res => {
         setCredits(res.data)
+        setLoading(false)
       })
   }, [])
 
+
   return (
     <div className="movie">
-      {details &&
+      {!loading &&
         <div>
           <div className="movie-heading">
             <img className="backdrop" src={`https://image.tmdb.org/t/p/w500${details.backdrop_path}`} alt="" />
@@ -87,7 +91,7 @@ const Movie = () => {
                   <h4><Link to={'/credits'} state={{credits:credits, poster:details.poster_path, title:details.title, release:details.release_date}}> View full cast and crew</Link></h4>
                 </div> 
                 <div>
-                  {credits &&
+                  {!loading &&
                     credits.cast.map(movie => {
                       const { id, name, profile_path, character } = movie
                       return (
@@ -110,7 +114,7 @@ const Movie = () => {
             <div className="similar">
               <h1>You Might Also Like:</h1>
               <div>
-                {similar &&
+                {!loading &&
                   similar.map(movie => {
                     const { id, title, poster_path } = movie
                     return (
@@ -129,8 +133,9 @@ const Movie = () => {
             </div>
           </div>
         </div>}
+        {loading && <h1>Loading...</h1>}
     </div>
-  );
+  ); 
 }
 
 export default Movie;

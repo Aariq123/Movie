@@ -38,7 +38,7 @@ const People = () => {
               <div>
                 <h2>{person.name}</h2>
                 <h3>Biography</h3>
-                <p>{read ? person.biography : person.biography.split('').slice(0, 650)}
+                <p>{read ? person.biography : person.biography.split('').slice(0, 300)}
                   <span className='read-more' onClick={() => setRead(true)}>{read ? '' : ' Read More'}
                   </span>
                 </p>

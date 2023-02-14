@@ -640,6 +640,17 @@ i.fa-bars, i.fa-xmark{
     flex-direction: column;
   }
 
+
+  .hero{
+    height: 400px;
+  }
+
+  .searched.show{
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .search{
     width: 300px;
   }
