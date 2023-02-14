@@ -212,7 +212,8 @@ i {
 
 
 .see-all {
-  margin: 10px;
+  display: block;
+  margin: 15px;
   text-decoration: underline;
 }
 
@@ -413,9 +414,14 @@ h3 {
   display: flex;
 }
 
-.filter-result img {
-  height: 280px;
+.filter-result a img {
+  height: 250px;
   width: 180px;
+}
+
+.face-des{
+  max-height: 140px;
+  overflow: hidden;
 }
 
 
@@ -631,8 +637,23 @@ i.fa-bars, i.fa-xmark{
   .footer-2{
     flex-direction: column;
   }
+
+  .filter-result .search-div-movie img{
+    width: 100px;
+    height: 150px;
+  }
+
+  .face-des{
+    max-height: 40px;
+  }
 }
 
+
+@media (max-width: 630px){
+  .search-result .container{
+    flex-direction: column;
+  }
+}
 
 @media (max-width:570px) {
   .acting a{

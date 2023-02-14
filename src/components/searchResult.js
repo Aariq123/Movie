@@ -68,7 +68,7 @@ const SearchResult = () => {
                         <h4>{title ? title : name}</h4>
                         <p>{media_type.toUpperCase()}</p>
                         <p><i className="fa-solid fa-star"></i>{vote_average}</p>
-                        <p>{overview}</p>
+                        <p className='face-des'>{overview}</p>
                       </div>
                     </div>
                   </Link>
