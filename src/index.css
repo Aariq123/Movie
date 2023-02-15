@@ -171,6 +171,7 @@ i {
 .search-div {
   text-align: left;
   padding: 10px;
+  display: flex;
 }
 
 
@@ -183,7 +184,7 @@ i {
   display: flex;
 }
 
-.search-div-movie {
+.search-div-movie, .filter-result .search-div {
   text-align: left;
   padding: 7px;
   display: flex;
@@ -424,8 +425,39 @@ h3 {
   overflow: hidden;
 }
 
+.filter{
+  background-color: rgb(43, 37, 37);
+  border-radius: 10px;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  margin: 0 20px;
+}
+
+.filter p{
+  margin: 12px  8px;
+}
+
+ .search-div i{
+  font-size: 60px;
+  color: lightgrey;
+}
+
+.search-div > div{
+  flex-direction: column;
+  margin-left: 8px;
+  height: 50px;
+  overflow: hidden;
+}
+
+ .search-div > div > div{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 /* ///////  credits  ///////*/
+
+
 
 .credits{
   color: white;
@@ -653,6 +685,14 @@ i.fa-bars, i.fa-xmark{
   .search-result .container{
     flex-direction: column;
   }
+
+  .filter{
+    width: 100%;
+  }
+
+  .filter h3{
+    text-align: center;
+  }
 }
 
 @media (max-width:570px) {
@@ -685,5 +725,13 @@ i.fa-bars, i.fa-xmark{
     height: 150px;
     width: 100px;
 
+  }
+
+  .hero{
+    overflow: hidden;
+  }
+
+  .hero-img{
+    overflow: hidden;
   }
 }

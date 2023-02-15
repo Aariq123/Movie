@@ -22,15 +22,15 @@ const SearchResult = () => {
 
   return (
     <div className="search-result">
-       <h1>All Results for '{search.toUpperCase()}'</h1>
+      <h1>All Results for '{search.toUpperCase()}'</h1>
       <div className="container">
         <div className="filter">
-          Search-Results
+          <h3>Search-Results</h3>
           {ligma && ligma.map((item, i) => {
             return (
               <p key={i}>{item.toUpperCase()}:{
                 array.map(category => {
-                  if(item == category.media_type){
+                  if (item == category.media_type) {
                     let sugma = 0
                     sugma = sugma + 1
                     return sugma
@@ -48,13 +48,16 @@ const SearchResult = () => {
                 return (
                   <Link to={'/people'} state={{ people: id }} key={id}>
                     <div className="search-div">
-                      <h4>{name}</h4>
-                      <p>{known_for_department}</p>
-                      <div>{known_for.map((item, i) => {
-                        return (
-                          <p key={item.id}> {item.title ? item.title : item.name}{i == known_for.length - 1 ? '' : ','}</p>
-                        )
-                      })}</div>
+                      <i className="fa-solid fa-user"></i>
+                      <div>
+                        <h4>{name}</h4>
+                        <p>{known_for_department}</p>
+                        <div>{known_for.map((item, i) => {
+                          return (
+                            <p key={item.id}> {item.title ? item.title : item.name}{i == known_for.length - 1 ? '' : ','}</p>
+                          )
+                        })}</div>
+                      </div>
                     </div>
                   </Link>
                 )

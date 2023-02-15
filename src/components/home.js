@@ -24,7 +24,7 @@ const Home = () => {
   }, [])
 
 
-  
+
   useEffect(() => {
     if (search.split('').length > 0) {
       axios.get(`https://api.themoviedb.org/3/search/multi?api_key=${id}&language=en-US&query=${search}&page=100&include_adult=false`)
@@ -40,23 +40,23 @@ const Home = () => {
 
 
   const closeSearch = (value) => {
-    if(searching){
-      if(!value.classList.contains('hehe')){
+    if (searching) {
+      if (!value.classList.contains('hehe')) {
         setSearching(false)
       }
-    } 
+    }
   }
 
   const openSearch = () => {
-    if(search !== ''){
-      if(!searching){
+    if (search !== '') {
+      if (!searching) {
         setSearching(true)
       }
-    } 
+    }
   }
 
   return (
-    <div className="home" onClick={(e)=> closeSearch(e.target)}>
+    <div className="home" onClick={(e) => closeSearch(e.target)}>
       <div className="hero">
         <img className='hero-img' src={require('../images/tv.jpg')} alt="" />
         <div className="home-text">
@@ -72,13 +72,16 @@ const Home = () => {
                 if (media_type == 'person') {
                   return (
                     <div className="search-div" key={id}>
-                      <h4>{name}</h4>
-                      <p>{known_for_department}</p>
-                      <div>{known_for.map((item, i) => {
-                        return (
-                          <p key={item.id}> {item.title ? item.title : item.name}{i == known_for.length - 1 ? '' : ','}</p>
-                        )
-                      })}</div>
+                      <i className="fa-solid fa-user"></i>
+                      <div>
+                        <h4>{name}</h4>
+                        <p>{known_for_department}</p>
+                        <div>{known_for.map((item, i) => {
+                          return (
+                            <p key={item.id}> {item.title ? item.title : item.name}{i == known_for.length - 1 ? '' : ','}</p>
+                          )
+                        })}</div>
+                      </div>
                     </div>
                   )
                 }
@@ -98,7 +101,7 @@ const Home = () => {
 
               })
             }
-              <Link className='see-all' to={'/searchResult'} state={{ array: searchResult , search:search}}>See all Result</Link>
+              <Link className='see-all' to={'/searchResult'} state={{ array: searchResult, search: search }}>See all Result</Link>
             </div>
           }
           </div>
@@ -113,20 +116,20 @@ const Home = () => {
             {trends !== [] &&
               trends.map(trend => {
                 const { name, id, title, poster_path, vote_average, first_air_date, release_date } = trend
- 
-                  return (
-                    <div className="trend" key={id}>
-                      <Link to={'/movie'} state={{ movieId: id }}>
-                        <img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt="" />
-                        <div>
-                          <p><i className="fa-solid fa-star"></i> {vote_average}</p>
-                          <p>{title ? title : name}</p>
-                          <p>{first_air_date ? first_air_date : release_date}</p>
-                        </div>
-                      </Link>
-                    </div>
-                  )
-                
+
+                return (
+                  <div className="trend" key={id}>
+                    <Link to={'/movie'} state={{ movieId: id }}>
+                      <img src={`https://image.tmdb.org/t/p/w200${poster_path}`} alt="" />
+                      <div>
+                        <p><i className="fa-solid fa-star"></i> {vote_average}</p>
+                        <p>{title ? title : name}</p>
+                        <p>{first_air_date ? first_air_date : release_date}</p>
+                      </div>
+                    </Link>
+                  </div>
+                )
+
               })
             }
           </div>
