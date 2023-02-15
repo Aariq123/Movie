@@ -113,7 +113,8 @@ const Home = () => {
           <h2>The fuck do u want to watch?</h2>
           <h3>This Week's trending</h3>
           <div className="trends">
-            {trends !== [] &&
+            {/*
+            trends !== [] &&
               trends.map(trend => {
                 const { name, id, title, poster_path, vote_average, first_air_date, release_date } = trend
 
@@ -131,7 +132,7 @@ const Home = () => {
                 )
 
               })
-            }
+            */  }
           </div>
         </div>
       </div>
