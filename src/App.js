@@ -11,6 +11,7 @@ import { useContext } from "react";
 import SearchResult from "./components/searchResult.js";
 import HoverMenuPage from "./components/hoverMenuPage.js";
 import Credits from "./components/credits.js";
+import HeaderPeople from "./components/headerPeople.js";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/people" element={<People></People>}></Route>
             <Route path="/hoverMenuPage" element={<HoverMenuPage></HoverMenuPage>}></Route>
             <Route path="/credits" element={<Credits></Credits>}></Route>
+            <Route path="/headerPeople" element={<HeaderPeople></HeaderPeople>}></Route>
           </Routes>
         <Footer></Footer>
         </HashRouter>

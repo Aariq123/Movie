@@ -46,7 +46,7 @@ const Header = () => {
             <div className={sideBar ? "main-menus show" : "main-menus"}>
                 <div onMouseOver={positioning} className="movie menu">MOVIES</div>
                 <div onMouseOver={positioning} className="tv menu">TV SHOWS</div>
-                <div className="people">PEOPLE</div>
+                <div className="people"><Link to='/headerPeople'>PEOPLE</Link></div>
             </div>
             <div ref={menuRef} className={hoverMenu ? 'hovermenu open menu' : 'hovermenu menu'}>{
               hover &&  hover.map((item, i)=>{
