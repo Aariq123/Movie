@@ -64,7 +64,7 @@ i {
 /* /////// Home ////// */
 
 .hero {
-  height: 550px;
+  height: 87vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,9 +94,11 @@ i {
 
 .hero-img {
   position: absolute;
-  width: 100%;
-  height: 100%;
+
   z-index: -1;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .trending {
@@ -739,7 +741,8 @@ i.fa-bars, i.fa-xmark{
   }
 
   .filter{
-    width: 100%;
+    width: 90%;
+    margin: 20px auto;
   }
 
   .filter h3{
@@ -754,7 +757,7 @@ i.fa-bars, i.fa-xmark{
 
 
   .hero{
-    height: 400px;
+    height: 450px;
   }
 
   .searched.show{
@@ -767,20 +770,30 @@ i.fa-bars, i.fa-xmark{
     width: 300px;
   }
 
-  .trend{
-    width: 100px;
-    font-size: 14px;
-    height: 315px;
-  }
-
-  .trend a img{
-    height: 150px;
-    width: 100px;
-
-  }
-
+ 
   .header-people .search-div-movie{
     padding: 0;
     width: 320px;
+  }
+}
+
+
+@media (max-width:510px){
+  .hoverMenuPage .container{
+    width: 97%;
+  }
+
+  .category-results .trend{
+    width: 100%;
+    height: 180px;
+  }
+
+  .category-results .trend a{
+    display: flex;
+  }
+
+  .category-results .trend a img{
+    height: 180px;
+    width: 120px;
   }
 }
