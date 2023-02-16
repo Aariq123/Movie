@@ -94,7 +94,6 @@ i {
 
 .hero-img {
   position: absolute;
-
   z-index: -1;
   height: 100%;
   left: 50%;
@@ -703,10 +702,11 @@ i.fa-bars, i.fa-xmark{
     flex-direction: column;
   }
 
+
   .backdrop{
-    left: 0;
+    left: 50%;
     height: 100%;
-    width: 100%;
+    transform: translateX(-50%);
   }
 
   .overview{
@@ -779,7 +779,7 @@ i.fa-bars, i.fa-xmark{
 
 
 @media (max-width:510px){
-  .hoverMenuPage .container{
+  .hoverMenuPage .container, .movie .container{
     width: 97%;
   }
 
@@ -796,4 +796,9 @@ i.fa-bars, i.fa-xmark{
     height: 180px;
     width: 120px;
   }
+
+  .movie-heading{
+    padding: 10px;
+  }
+
 }
